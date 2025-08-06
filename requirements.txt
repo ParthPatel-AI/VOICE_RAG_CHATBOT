@@ -32,3 +32,4 @@ langchain-community>=0.0.20
 faiss-cpu
 langchain
 sentence-transformers
+sqlite3
