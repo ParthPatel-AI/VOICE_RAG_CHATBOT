@@ -29,3 +29,6 @@ google-generativeai
 langchain>=0.2
 
 langchain-community>=0.0.20
+faiss-cpu
+langchain
+sentence-transformers
