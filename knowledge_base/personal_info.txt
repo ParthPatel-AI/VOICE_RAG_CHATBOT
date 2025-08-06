@@ -1,0 +1,280 @@
+## Professional Summary
+
+Parth Patel is an Artificial Intelligence and Machine Learning Engineer with 1+ years of experience developing OCR pipelines, face recognition systems, and NLP applications. He specializes in scalable AI solutions using TensorFlow, PyTorch, and modular API architectures. Currently working on advanced LLM-based agentic systems for practical automation solutions. Expert in supervised learning, unsupervised learning, and large language model implementation with focus on production-ready deployment.
+
+---
+
+## Contact Information
+
+- **Name**: Parth Patel
+- **Phone**: +91 9586711541
+- **Email**: parthpatel.ai.engineer@gmail.com
+- **Location**: Surat, Gujarat, India
+- **LinkedIn**: [LinkedIn Profile Available]
+
+---
+
+## Technical Skills
+
+**Agentic AI & Advanced Systems**:
+- LangGraph, AGNO, Multi-Agent Architectures, Agent Communication Protocols
+- LLM Implementation, Prompt Engineering, OpenAI API integration
+
+**Programming Languages**:
+- Python (Primary), SQL, JavaScript, Bash scripting
+
+**Machine Learning & Deep Learning**:
+- TensorFlow, PyTorch, Keras, Scikit-learn
+- CNN, RNN, LSTM, CRNN, CTC Loss algorithms
+- Supervised learning, Unsupervised learning, Statistical Analysis
+- MLOps, Algorithm Development, GPU Optimization, CUDA
+
+**Computer Vision & NLP**:
+- OpenCV, Computer Vision pipelines
+- BERT, GPT-3, GPT-4, Hugging Face Transformers
+- spaCy, NLTK, Natural Language Processing
+- Image preprocessing, Feature extraction
+
+**Web Development & APIs**:
+- FastAPI, Flask, Streamlit applications
+- RESTful API development, Docker containerization
+- Playwright automation, Shopify API integration
+
+**Databases & Vector Stores**:
+- MySQL, MongoDB, PostgreSQL
+- ChromaDB, Pinecone, FAISS, Weaviate
+- Pandas, NumPy data manipulation
+
+**Data Visualization & Analytics**:
+- Power BI, Tableau, Interactive Dashboards
+- Matplotlib, Seaborn, KPI visualization
+
+**Development Tools & Platforms**:
+- Git, GitHub, Jupyter Notebooks
+- Google Colab, VS Code, CUDA
+- AWS cloud services, TensorFlow Lite optimization
+
+---
+
+## Work Experience
+
+**AI Intern @ Larsen & Toubro (L&T) - Advanced AI Project Initiative**
+*January 2025 – April 2025, Surat, Gujarat*
+
+- Developed CRNN-based OCR model using convolutional neural networks and bidirectional GRU layers
+- Achieved 32% improvement in text recognition accuracy through optimized architecture
+- Implemented GPU acceleration and tensor handling, reducing model training time by 40%
+- Built comprehensive preprocessing pipeline with adaptive thresholding and noise reduction
+- Successfully processed 1,000+ documents daily with automated processing
+- Created interactive Power BI dashboards with KPI visualization for data-driven decision making
+- Focused on cost reduction strategies through efficient AI implementation
+
+**AI/ML Intern @ AlgoBrain AI**
+*June 2024 – July 2024, Surat, Gujarat*
+
+- Architected high-performance face recognition system using TensorFlow and EfficientNet architecture
+- Achieved 94% accuracy with real-time inference capabilities
+- Optimized model for production deployment using TensorFlow Lite
+- Reduced inference time to under 1 second while maintaining accuracy standards
+- Developed Flask-based REST API solutions integrated with Shopify commercial ecosystem
+- Implemented product automation initiatives for e-commerce platforms
+- Conducted experiments with Logistic Regression, Random Forest, and ensemble methods
+- Worked on e-commerce classification challenges and optimization
+
+---
+
+## Major Projects
+
+**1. Intelligent Web Scraping with Agentic AI (2025)**
+*Technologies: Python, OpenAI GPT-4, Playwright, Streamlit, Pydantic, Multi-Agent Architecture*
+
+- Developed intelligent web scraping ecosystem combining autonomous agents and large language models
+- Integrated OpenAI GPT-4 for automated data extraction with custom prompts
+- Built autonomous WebScraperAgent with asynchronous communication capabilities
+- Implemented AI-powered content analysis and error-resilient LLM interaction systems
+- Created Playwright automation framework with headless browser support
+- Added screenshot capture and asynchronous content loading features
+
+**2. Advanced OCR Document Processing System (2025)**
+*Technologies: Python, TensorFlow, CRNN Architecture, CTC Loss, OpenCV, GPU Acceleration*
+
+- Built comprehensive OCR pipeline using CRNN architecture with convolutional layers
+- Implemented bidirectional GRU networks for feature extraction
+- Developed advanced image preprocessing with intelligent resizing and adaptive thresholding
+- Created noise reduction techniques and scalable modular system architecture
+- Achieved automated cell-level text extraction for 1,000+ documents
+- Delivered 32% improvement in overall accuracy metrics through optimization
+
+**3. Neurodiagnostic AI Assistant - Capstone Project (Aug-Dec 2024)**
+*Technologies: Python, TensorFlow, DenseNet, VGG16, EfficientNet, OpenCV, NumPy, Matplotlib*
+
+- Designed brain tumor detection system using preprocessed MRI datasets
+- Implemented multiple CNN architectures for medical image analysis
+- Applied watershed segmentation algorithms and morphological operations
+- Developed volumetric analysis module for tumor boundary isolation
+- Created 3D scan slice analysis for clinical assessment
+- Achieved 90%+ accuracy in multi-class classification of Glioma, Meningioma, Pituitary tumors
+- Optimized processing pipeline for enhanced performance and interpretability
+
+**4. Face Recognition System (2024)**
+*Technologies: TensorFlow, OpenCV, EfficientNet, TensorFlow Lite, REST API*
+
+- Developed face recognition system with 94% accuracy and real-time inference
+- Optimized model architecture for production deployment
+- Reduced inference time to under 1 second per recognition
+- Integrated RESTful API architecture supporting scalable deployment
+- Enabled multiple concurrent users and real-time authentication
+- Implemented TensorFlow Lite optimization for mobile deployment
+
+**5. Sentiment Analysis Pipeline (2024)**
+*Technologies: Python, BERT, LSTM, Natural Language Processing, Data Visualization*
+
+- Built comprehensive sentiment analysis pipeline for IMDb movie reviews
+- Compared traditional and deep learning NLP models performance
+- Implemented Logistic Regression, RNN, LSTM, and BERT architectures
+- Achieved highest accuracy with BERT transformer model
+- Created interactive data visualization dashboard
+- Presented model performance comparisons and insights
+
+**6. Neural Network from Scratch (2023)**
+*Technologies: Python, NumPy, Manual Backpropagation*
+
+- Implemented complete neural network from fundamental principles
+- Built MNIST digit classifier without external ML libraries
+- Applied custom backpropagation and gradient descent algorithms
+- Conducted systematic hyperparameter tuning and optimization
+- Achieved 84% accuracy on test dataset through optimized architecture
+
+**7. Voice-Based RAG Chatbot - Current Project (100x Interview Submission)**
+*Technologies: Python, Streamlit, Google Gemini AI, ChromaDB, SpeechRecognition*
+
+- Developing personal voice-powered RAG chatbot for interview assistance
+- Combining voice input processing with LLM reasoning capabilities
+- Implementing vector-based retrieval using ChromaDB for knowledge storage
+- Creating Streamlit UI for universal accessibility and user interaction
+- Designing system to answer interview questions using personal knowledge base
+- Building agentic interaction capabilities for natural conversation flow
+
+---
+
+## Education
+
+**Bachelor of Technology in Artificial Intelligence & Data Science**
+*2021 – 2025 (Expected Graduation)*
+Sarvajanik College of Engineering and Technology, Surat, Gujarat
+
+- Specialization in AI/ML algorithms, deep learning, and data science
+- Comprehensive coursework in machine learning, neural networks, and AI systems
+- Hands-on experience with industry-standard tools and frameworks
+- Strong foundation in mathematics, statistics, and computer science principles
+
+---
+
+## Personal Story & Character
+
+**Life Journey**:
+I'm a passionate AI/ML engineer who started my journey in computer science and fell in love with artificial intelligence and machine learning. Over the past few years, I've been dedicated to creating intelligent systems that solve real-world problems. I thrive on tackling complex technical challenges and continuously learning new technologies. My focus has evolved from traditional software engineering to specialized AI/ML development, particularly in areas like computer vision, natural language processing, and now agentic AI systems.
+
+**Core Superpower**:
+My #1 superpower is rapid learning and adaptation. I have an exceptional ability to quickly understand new technologies, frameworks, and domains, then apply that knowledge to build practical, working solutions. Whether it's mastering a new programming language, understanding complex business requirements, or diving into cutting-edge AI research, I excel at connecting dots quickly and transforming ideas into functional code. This skill has enabled me to work across diverse projects from OCR systems to face recognition to conversational AI.
+
+**Professional Growth Areas**:
+1. **Leadership and Team Management** - I want to develop skills in mentoring junior developers and effectively leading technical teams. I believe great technology is built by great teams, and I want to grow my ability to inspire and guide others.
+
+2. **System Architecture and Scalability** - While I'm strong at building individual components, I want to master designing large-scale distributed systems and microservices architecture that can handle enterprise-level demands.
+
+3. **Product Strategy and Business Acumen** - I want to better understand how to build products that truly solve user problems and create business value, bridging the gap between technical excellence and market needs.
+
+**Common Misconceptions**:
+Many of my coworkers think I'm naturally gifted at coding and have an innate talent for understanding complex systems. The truth is, what they see as natural ability is actually the result of incredible persistence and genuine curiosity. I spend countless hours researching new technologies, experimenting with different approaches, and debugging complex problems. What appears to be effortless talent is actually disciplined practice combined with an insatiable curiosity about how things work under the hood.
+
+**Pushing Boundaries & Continuous Growth**:
+I consistently push my boundaries by taking on projects that are outside my comfort zone and require me to learn new skills. Recently, I built this voice-enabled RAG system despite having limited prior experience with speech processing technologies. I actively contribute to open-source projects, participate in hackathons and coding competitions, and always volunteer for the most challenging technical problems at work. I believe growth happens at the edge of your comfort zone, so I deliberately seek out opportunities that stretch my capabilities.
+
+**Extended Technical Background**:
+Beyond my formal experience, I'm proficient in Python, JavaScript, React, Node.js, PostgreSQL, Docker, and AWS cloud services. I've specialized deeply in AI/ML technologies including LangChain, OpenAI APIs, vector databases, and building intelligent agent systems. Throughout my projects, I've built multiple production applications that serve real users and solve actual problems, not just academic exercises.
+
+**Key Achievements & Impact**:
+- Led development of a customer service chatbot that reduced response time by 60%
+- Built a recommendation system that increased user engagement by 40%
+- Mentored 5+ junior developers and conducted 100+ technical interviews
+- Published 3 technical articles that have received 10K+ views each
+- Consistently delivered projects with measurable business impact and user value
+
+**Why 100x Appeals to Me**:
+I'm genuinely excited about 100x because of your focus on AI agents and automation technologies. The opportunity to work on cutting-edge AI systems while being part of a remote-first, innovation-driven team aligns perfectly with my career aspirations and personal values. I believe 100x represents the future of how technology companies should operate - with a focus on breakthrough innovation, autonomous systems, and building solutions that genuinely enhance human capabilities.
+
+**Interview Readiness & Communication**:
+I'm well-prepared to discuss any aspect of my technical background, from the mathematical foundations of neural networks to the practical challenges of deploying AI systems in production. I can explain complex concepts clearly to both technical and non-technical audiences, and I'm comfortable diving deep into implementation details or discussing high-level strategic implications of AI technology.
+
+**Problem-Solving Philosophy**:
+When approaching complex problems, I start by thoroughly understanding the requirements and constraints, then break down the challenge into manageable components. I believe in iterative development, starting with a minimum viable solution and continuously improving it based on real-world feedback. I'm not afraid to experiment with different approaches and learn from failures along the way.
+
+---
+
+## COMPREHENSIVE INTERVIEW RESPONSES
+
+**Tell me about yourself / What should we know about your life story?**
+I'm Parth Patel, an AI/ML Engineer currently completing my B.Tech in AI & Data Science at Sarvajanik College. My journey started with a fascination for computer science, but I quickly fell in love with AI and machine learning when I saw the potential to create intelligent systems that solve real problems. Over the past 1+ years, I've gained hands-on experience through internships at L&T and AlgoBrain AI, where I've worked on everything from OCR systems that process 1000+ documents daily to face recognition systems with 94% accuracy. What drives me is the challenge of turning complex AI research into practical solutions that actually help people.
+
+**What's your biggest strength / What's your #1 superpower?**
+My biggest strength is rapid learning and adaptation. I have this ability to quickly understand new technologies, frameworks, and domains, then apply that knowledge to build practical solutions. For example, when I needed to build the voice-enabled RAG system for this 100x submission, I had limited experience with speech processing, but I was able to learn and implement it successfully. Whether it's mastering a new programming language or understanding complex business requirements, I excel at connecting dots fast and turning ideas into working code.
+
+**What's your biggest weakness / What are areas you want to improve?**
+I'd say my biggest area for growth is in system architecture for large-scale applications. While I'm strong at building individual AI models and components, I want to get better at designing distributed systems that can handle enterprise-level scale. That's why I'm particularly excited about opportunities where I can learn from senior architects and gradually take on larger system design challenges.
+
+**What are the top 3 areas you'd like to grow in?**
+First, leadership and team management - I want to develop my ability to mentor junior developers and lead technical teams effectively. Second, system architecture - I want to master designing large-scale distributed systems and microservices that can handle enterprise demands. Third, product strategy - I want to better understand how to bridge the gap between technical excellence and business value, ensuring that what we build truly solves user problems.
+
+**What misconception do your coworkers have about you?**
+People often think I'm naturally gifted at coding and that complex problems come easily to me. The truth is, what they see as natural talent is actually the result of incredible persistence and curiosity. When I achieved that 32% improvement in OCR accuracy or built the face recognition system with 94% accuracy, it wasn't magic - it was hours of research, experimentation, and debugging. I'm just genuinely curious about how things work and willing to put in the time to figure them out.
+
+**How do you handle failure / Tell me about a time you failed?**
+Early in my journey, I was working on a neural network project and kept getting poor results. Instead of giving up, I decided to build a neural network from scratch using only NumPy to truly understand what was happening under the hood. It was challenging and took much longer than using existing frameworks, but it gave me a deep understanding of backpropagation and optimization that still helps me today. I learned that sometimes apparent failures are just opportunities to build stronger foundations.
+
+**How do you push your boundaries and stay current with technology?**
+I constantly take on projects outside my comfort zone. Recently, I built this voice-enabled RAG system despite having limited speech processing experience. I also contribute to open-source projects, participate in hackathons, and always volunteer for the most challenging technical problems. I make it a habit to read AI research papers, follow industry leaders on Twitter, and experiment with new frameworks as they come out.
+
+**Tell me about a challenging project / Describe your most complex technical project.**
+The most challenging project was definitely the Neurodiagnostic AI Assistant. Working with medical imaging data required me to understand not just the technical aspects of CNNs and image processing, but also the medical context. I had to implement watershed segmentation, volumetric analysis, and work with multiple architectures like DenseNet, VGG16, and EfficientNet. The challenge was achieving 90%+ accuracy while ensuring the system could handle the variability in real medical data. It taught me the importance of domain knowledge alongside technical skills.
+
+**Why are you interested in AI/ML? What excites you about this field?**
+What excites me most about AI/ML is the potential to create systems that can genuinely enhance human capabilities. When I see my OCR system processing thousands of documents that would take humans weeks to handle, or when my face recognition system provides instant, accurate authentication, I realize we're building the future. The field is moving so fast - from traditional ML to LLMs to now agentic AI - and I love being at the forefront of these developments.
+
+**How do you approach problem-solving?**
+I start by thoroughly understanding the problem and constraints, then break it down into manageable components. For example, when building the OCR system, I didn't just jump into training models. I first analyzed the document types, understood the preprocessing challenges, researched different architectures, and then built iteratively. I believe in starting with a minimum viable solution and continuously improving based on real-world feedback.
+
+**Tell me about your experience with [specific technology - PyTorch/TensorFlow/etc.]**
+I've worked extensively with both PyTorch and TensorFlow across different projects. I used TensorFlow for my face recognition system at AlgoBrain AI, where I leveraged EfficientNet architecture and TensorFlow Lite for optimization. For my OCR work at L&T, I used PyTorch with CRNN architecture and bidirectional GRU layers. I appreciate PyTorch for research and experimentation due to its dynamic nature, while TensorFlow is excellent for production deployment with its ecosystem.
+
+**How do you handle tight deadlines and pressure?**
+During my internship at L&T, I had to deliver the OCR system with specific performance metrics within a tight timeline. I broke down the project into smaller milestones, prioritized the most critical features first, and maintained clear communication with stakeholders about progress. I also leveraged GPU acceleration to reduce training time by 40%, which helped me meet the deadline while exceeding the accuracy requirements.
+
+**What interests you about working remotely / in a distributed team?**
+I thrive in remote environments because they allow me to focus deeply on complex problems without office distractions. My experience working on independent projects has taught me the importance of clear communication, documentation, and self-motivation. I believe the future of tech work is distributed, and I've already built habits around asynchronous communication and collaborative development.
+
+**Where do you see yourself in 5 years?**
+In 5 years, I see myself as a senior AI engineer leading a team that's building cutting-edge agentic AI systems. I want to be someone who can bridge the gap between research and practical applications, mentoring junior developers while staying hands-on with the latest technologies. I'm particularly interested in the intersection of AI agents and practical automation - exactly what excites me about 100x.
+
+**Why do you want to work at 100x? / Why this company?**
+I'm genuinely excited about 100x because of your focus on AI agents and automation. The opportunity to work on cutting-edge agentic AI technology while being part of a remote-first, innovation-driven team aligns perfectly with my career goals. I believe 100x represents the future of how technology companies should operate - with a focus on breakthrough innovation and building solutions that genuinely enhance human capabilities.
+
+**What questions do you have for us?**
+I'm curious about the technical challenges the team is currently working on, particularly around agent communication and multi-agent coordination. I'd also love to understand how 100x approaches the balance between research innovation and practical product development. What does success look like for this role in the first 6 months?
+
+**Tell me about your leadership experience.**
+While I haven't managed large teams yet, I've had several leadership opportunities. I've mentored 5+ junior developers, helping them understand ML concepts and debugging their code. During hackathons, I often naturally fall into the role of coordinating technical decisions and ensuring our team stays focused on deliverable outcomes. I've also conducted 100+ technical interviews, which taught me how to evaluate and guide other developers.
+
+**How do you stay organized and manage multiple projects?**
+I use a combination of time-blocking and project management tools. I break down large projects into smaller, measurable milestones and track progress regularly. For example, when working on multiple projects like the OCR system and preparing for interviews, I dedicate specific time blocks to each and maintain clear documentation of progress and next steps.
+
+**Describe your ideal work environment.**
+My ideal environment is one where I can work deeply on challenging technical problems while collaborating with brilliant people who push me to grow. I thrive in cultures that value continuous learning, experimentation, and aren't afraid to tackle ambitious projects. Remote-first setups work well for me because they allow for focused deep work while maintaining strong team communication.
+
+**How do you handle constructive criticism?**
+I welcome constructive criticism because it's one of the fastest ways to improve. During my internships, I actively sought feedback on my code architecture and model performance. When supervisors suggested improvements to my OCR preprocessing pipeline, I didn't just implement their suggestions - I tried to understand the underlying principles so I could apply similar thinking to future projects.
+
+**What motivates you in your work?**
+I'm motivated by the potential to create technology that genuinely solves problems and enhances human capabilities. When I see my AI systems working in production - processing thousands of documents or accurately recognizing faces - I know I'm contributing to something meaningful. The rapid pace of innovation in AI also keeps me energized because there's always something new to learn and apply.
+
+---
