@@ -10,6 +10,12 @@ import pytz
 import os
 import logging
 
+
+
+import streamlit as st
+
+api_key = st.secrets["GEMINI_API_KEY"]
+
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
