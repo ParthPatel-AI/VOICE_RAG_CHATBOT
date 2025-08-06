@@ -15,6 +15,24 @@ import logging
 import streamlit as st
 
 api_key = st.secrets.get("GEMINI_API_KEY")
+import streamlit as st
+import os
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Safely get API key from secrets or environment
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+    logger.info("✅ Loaded Gemini API key from st.secrets")
+except Exception:
+    api_key = os.getenv("GEMINI_API_KEY")
+    if api_key:
+        logger.info("✅ Loaded Gemini API key from environment variable")
+    else:
+        logger.error("❌ GEMINI_API_KEY not found in st.secrets or env")
 
 
 # Set up logging
