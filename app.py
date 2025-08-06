@@ -14,7 +14,8 @@ import logging
 
 import streamlit as st
 
-api_key = st.secrets["GEMINI_API_KEY"]
+api_key = st.secrets.get("GEMINI_API_KEY")
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

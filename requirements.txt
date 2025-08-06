@@ -1,5 +1,6 @@
 # Core Libraries
-streamlit
+streamlit>=1.28.0
+
 langchain
 chromadb
 sentence-transformers
