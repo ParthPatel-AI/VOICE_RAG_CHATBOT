@@ -1,9 +1,12 @@
+
+
 import streamlit as st
 import speech_recognition as sr
 from utils.rag_utils import load_vectorstore, get_relevant_context
 import google.generativeai as genai
 import time
 from datetime import datetime
+import pytz
 import os
 import logging
 
@@ -310,7 +313,7 @@ def transcribe_audio_enhanced(recognizer):
         st.warning("🤔 Could not understand. Please speak more clearly.")
         return None, False
     except Exception as e:
-        st.error(f"🚫 Microphone error: {str(e)}")
+        st.error(f"🚫 Microphone error due to limitation of streamlit: {str(e)}")
         return None, False
 
 # 🧠 AI response (keeping the same enhanced function)
@@ -400,9 +403,12 @@ def display_chat_message(message, is_user=False, timestamp=None):
         </div>
         ''', unsafe_allow_html=True)
 
+
 def get_timestamp():
-    """Get formatted timestamp"""
-    return datetime.now().strftime("%I:%M %p")
+    """Get formatted timestamp in IST"""
+    ist = pytz.timezone('Asia/Kolkata')
+    ist_time = datetime.now(ist)
+    return ist_time.strftime("%I:%M %p")
 
 # 📊 Clean metrics display
 def display_session_metrics():
@@ -539,7 +545,7 @@ def main():
                     </div>
                     ''', unsafe_allow_html=True)
                     
-                    with st.spinner("Parth is responding..."):
+                    with st.spinner("RAG assistant is responding..."):
                         answer, success = ask_gemini_enhanced(question, vectorstore)
                     
                     if success:
@@ -558,7 +564,7 @@ def main():
             )
             
             if st.button("📤 Send Question", use_container_width=True, type="secondary") and user_input:
-                with st.spinner("Parth is responding..."):
+                with st.spinner("RAG assistant is responding..."):
                     answer, success = ask_gemini_enhanced(user_input, vectorstore)
                 
                 if success:
@@ -609,9 +615,7 @@ A{i}: {chat['answer']}
                 else:
                     st.info("Start the interview first!")
         
-        with col3:
-            if st.button("📊 Show Stats", use_container_width=True):
-                st.session_state.show_stats = not st.session_state.get('show_stats', False)
+        
         
         # Display metrics if requested
         if st.session_state.get('show_stats', False):
