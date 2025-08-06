@@ -1,11 +1,44 @@
-# utils/rag_utils.py
+old utils 
 
+# utils/rag_utils.py
+'''
+from langchain_community.vectorstores import Chroma
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.document_loaders import TextLoader
+
+def load_vectorstore(file_path="knowledge_base/personal_info.txt", persist_dir="chroma_store"):
+    # Load documents from text file
+    loader = TextLoader(file_path)
+    documents = loader.load()
+
+    # Split the documents into manageable chunks
+    text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+    doc_chunks = text_splitter.split_documents(documents)
+
+    # Use HuggingFace sentence-transformer model for embedding
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
+    # Create or load Chroma vector store
+    vectorstore = Chroma.from_documents(
+        documents=doc_chunks,
+        embedding=embeddings,
+        persist_directory=persist_dir
+    )
+
+    return vectorstore
+
+'''
+
+# utils/rag_utils.py
+# utils/rag_utils.py
 import os
 import streamlit as st
+from langchain_community.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
-from langchain.vectorstores import FAISS
 import logging
 
 # Set up logging
@@ -13,117 +46,165 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class PersonalRAGSystem:
-    def __init__(self, file_path="knowledge_base/personal_info.txt", persist_dir="faiss_store"):
+    """RAG system specifically for Parth's personal_info.txt knowledge base"""
+    
+    def __init__(self, file_path="knowledge_base/personal_info.txt", persist_dir="chroma_store"):
         self.file_path = file_path
         self.persist_dir = persist_dir
         self.embeddings = None
         self.vectorstore = None
-
+        
     def initialize_embeddings(self):
+        """Initialize embeddings model"""
         try:
             self.embeddings = HuggingFaceEmbeddings(
                 model_name="sentence-transformers/all-MiniLM-L6-v2",
                 model_kwargs={'device': 'cpu'},
                 encode_kwargs={'normalize_embeddings': True}
             )
-            logger.info("✅ Embeddings model loaded")
+            logger.info("✅ Embeddings model loaded successfully")
             return True
         except Exception as e:
-            logger.error(f"❌ Embedding init failed: {e}")
+            logger.error(f"❌ Failed to load embeddings: {e}")
             return False
-
+    
     def load_personal_document(self):
+        """Load Parth's personal_info.txt document"""
         try:
+            # Ensure directory exists
             os.makedirs(os.path.dirname(self.file_path), exist_ok=True)
+            
+            # Check if personal_info.txt exists
             if not os.path.exists(self.file_path):
-                st.error(f"❌ {self.file_path} not found!")
+                st.error(f"❌ {self.file_path} not found! Please ensure your personal_info.txt file exists.")
                 return []
+            
+            # Load the specific file
             loader = TextLoader(self.file_path, encoding="utf-8")
             documents = loader.load()
-            logger.info(f"✅ Loaded {len(documents)} document(s)")
+            
+            logger.info(f"✅ Loaded personal_info.txt with {len(documents)} document(s)")
             return documents
+            
         except Exception as e:
-            logger.error(f"❌ Load error: {e}")
-            st.error(f"Error loading: {e}")
+            logger.error(f"❌ Error loading personal_info.txt: {e}")
+            st.error(f"Error loading knowledge base: {e}")
             return []
-
+    
     def process_documents(self, documents):
+        """Split personal info into optimized chunks"""
         if not documents:
             logger.warning("⚠️ No documents to process")
             return []
-        splitter = RecursiveCharacterTextSplitter(
-            chunk_size=800,
-            chunk_overlap=150,
+        
+        # Optimized text splitter for your personal info structure
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=800,  # Smaller chunks for better precision
+            chunk_overlap=150,  # Good overlap for context
             length_function=len,
             separators=["\n\n", "\n", "**", "- ", ". ", " ", ""]
         )
-        doc_chunks = splitter.split_documents(documents)
+        
+        doc_chunks = text_splitter.split_documents(documents)
+        
+        # Add metadata to chunks for better tracking
         for i, chunk in enumerate(doc_chunks):
             chunk.metadata.update({
                 "source": "personal_info.txt",
                 "chunk_id": i,
                 "total_chunks": len(doc_chunks)
             })
-        logger.info(f"✅ Created {len(doc_chunks)} chunks")
+        
+        logger.info(f"✅ Created {len(doc_chunks)} chunks from personal_info.txt")
         return doc_chunks
-
+    
     def create_vectorstore(self, doc_chunks):
+        """Create ChromaDB vectorstore from personal info chunks"""
         try:
-            if not self.embeddings and not self.initialize_embeddings():
-                raise Exception("Embeddings init failed")
+            if not self.embeddings:
+                if not self.initialize_embeddings():
+                    raise Exception("Failed to initialize embeddings")
+            
+            # Clear existing vectorstore if it exists
+            if os.path.exists(self.persist_dir):
+                import shutil
+                shutil.rmtree(self.persist_dir)
+                logger.info("🗑️ Cleared existing vectorstore")
+            
+            # Create new vectorstore
             if not doc_chunks:
-                raise Exception("No document chunks")
-
-            self.vectorstore = FAISS.from_documents(doc_chunks, self.embeddings)
-            self.vectorstore.save_local(self.persist_dir)
-            logger.info("✅ FAISS vectorstore created and saved")
+                raise Exception("No document chunks available for vectorstore creation")
+            
+            self.vectorstore = Chroma.from_documents(
+                documents=doc_chunks,
+                embedding=self.embeddings,
+                persist_directory=self.persist_dir,
+                collection_name="parth_personal_info"
+            )
+            
+            # Persist the vectorstore
+            self.vectorstore.persist()
+            
+            logger.info("✅ Created new ChromaDB vectorstore from personal_info.txt")
             return self.vectorstore
+            
         except Exception as e:
-            logger.error(f"❌ Vectorstore creation failed: {e}")
-            st.error(f"Vectorstore error: {e}")
+            logger.error(f"❌ Error creating vectorstore: {e}")
+            st.error(f"Failed to create knowledge base: {e}")
             return None
 
 @st.cache_resource
-def load_vectorstore(file_path="knowledge_base/personal_info.txt", persist_dir="faiss_store"):
+def load_vectorstore(file_path="knowledge_base/personal_info.txt", persist_dir="chroma_store"):
+    """Load vectorstore from personal_info.txt with caching"""
     try:
-        rag = PersonalRAGSystem(file_path, persist_dir)
-
-        if os.path.exists(persist_dir):
-            try:
-                embeddings = HuggingFaceEmbeddings(
-                    model_name="sentence-transformers/all-MiniLM-L6-v2",
-                    model_kwargs={'device': 'cpu'},
-                    encode_kwargs={'normalize_embeddings': True}
-                )
-                vectorstore = FAISS.load_local(persist_dir, embeddings)
-                logger.info("✅ Loaded existing FAISS vectorstore")
-                return vectorstore
-            except Exception as e:
-                logger.warning(f"⚠️ Failed to load existing FAISS vectorstore: {e}")
-
-        documents = rag.load_personal_document()
+        rag_system = PersonalRAGSystem(file_path, persist_dir)
+        
+        # Load personal document
+        documents = rag_system.load_personal_document()
         if not documents:
             return None
-
-        doc_chunks = rag.process_documents(documents)
+        
+        # Process documents
+        doc_chunks = rag_system.process_documents(documents)
         if not doc_chunks:
             return None
-
-        return rag.create_vectorstore(doc_chunks)
-
+        
+        # Create vectorstore
+        vectorstore = rag_system.create_vectorstore(doc_chunks)
+        
+        if vectorstore is None:
+            st.error("❌ Failed to create vectorstore from personal_info.txt")
+            return None
+        
+        # Verify vectorstore works
+        try:
+            test_docs = vectorstore.similarity_search("Parth Patel", k=1)
+            if test_docs:
+                logger.info("✅ Vectorstore verification successful")
+            else:
+                logger.warning("⚠️ Vectorstore created but no documents found in test search")
+        except Exception as e:
+            logger.warning(f"⚠️ Vectorstore verification failed: {e}")
+        
+        return vectorstore
+        
     except Exception as e:
-        st.error(f"❌ Failed to load vectorstore: {e}")
-        logger.error(f"Vectorstore error: {e}")
+        st.error(f"❌ Error loading vectorstore: {e}")
+        logger.error(f"Vectorstore loading error: {e}")
         return None
 
 def search_knowledge_base(vectorstore, query, k=5):
+    """Enhanced search with better keyword preprocessing"""
     try:
         if vectorstore is None:
             logger.error("❌ Vectorstore is None")
             return []
-
+        
+        # Enhanced query preprocessing for better matches
         enhanced_query = query
-        expansions = {
+        
+        # Expand common abbreviations and synonyms
+        query_expansions = {
             'ai': 'artificial intelligence AI',
             'ml': 'machine learning ML',
             'ocr': 'optical character recognition OCR document processing',
@@ -133,19 +214,20 @@ def search_knowledge_base(vectorstore, query, k=5):
             'ui': 'user interface UI frontend',
             'db': 'database DB data storage'
         }
-
-        for abbr, expansion in expansions.items():
+        
+        for abbr, expansion in query_expansions.items():
             if abbr.lower() in query.lower():
                 enhanced_query += f" {expansion}"
-
+        
         docs = vectorstore.similarity_search(enhanced_query, k=k)
-        logger.info(f"📚 Retrieved {len(docs)} results for query: '{query}'")
+        logger.info(f"📚 Retrieved {len(docs)} documents for enhanced query: '{query}'")
         return docs
+        
     except Exception as e:
-        logger.error(f"❌ Search failed: {e}")
+        logger.error(f"❌ Search error: {e}")
         return []
 
-# (You can re-use your existing get_relevant_context() function as is — no need to change it)
+
 def get_relevant_context(vectorstore, query, max_context_length=4000):
     """Enhanced context retrieval with comprehensive keywords from Parth's resume"""
     try:
