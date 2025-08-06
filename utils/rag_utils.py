@@ -33,7 +33,8 @@ def load_vectorstore(file_path="knowledge_base/personal_info.txt", persist_dir="
 import os
 import streamlit as st
 from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 import logging
